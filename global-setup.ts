@@ -6,10 +6,6 @@ dotenv.config();
 async function globalSetup(config: FullConfig) {
   const { URL: baseURL, EMAIL, PASSWORD } = process.env;
 
-  if ((!baseURL || !EMAIL || !PASSWORD) && !process.env.JENKINS_HOME) {
-    throw new Error('URL, EMAIL, and PASSWORD environment variables are required for global setup.');
-  }
-
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   const loginUrl = new URL('index.php?route=account/login', baseURL).toString();
