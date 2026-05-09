@@ -1,7 +1,4 @@
 import { defineConfig } from '@playwright/test';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const baseURL = process.env.URL;
 const email = process.env.EMAIL;

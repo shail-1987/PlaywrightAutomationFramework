@@ -1,7 +1,4 @@
 import { chromium, type FullConfig } from '@playwright/test';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 async function globalSetup(config: FullConfig) {
   const { URL: baseURL, EMAIL, PASSWORD } = process.env;
