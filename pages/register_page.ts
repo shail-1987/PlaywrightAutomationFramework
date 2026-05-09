@@ -37,6 +37,7 @@ export class RegisterPage extends BasePage {
 
     async fillForm(user:any): Promise<void> {
         // Fill only the form fields, leaving submission separate.
+        await this.firstNameInput.waitFor({ state: 'visible', timeout: 10000 });
         await this.firstNameInput.fill(user.firstName);
         await this.lastNameInput.fill(user.lastName);
         await this.emailInput.fill(user.email);

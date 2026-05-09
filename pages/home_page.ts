@@ -34,17 +34,20 @@ export class HomePage extends BasePage {
   }
 
   async openRegister(): Promise<void> {
-    // Open the My Account dropdown and click Register if visible.
-    await this.accountMenu.waitFor({ state: 'visible', timeout: 10000 });
-    await this.accountMenu.click();
+    // Attempt the UI flow first, but fall back to direct navigation if the dropdown fails.
+    await this.goto('');
 
-    const registerVisible = await this.registerLink.isVisible().catch(() => false);
-    if (registerVisible) {
+    try {
+      await this.accountMenu.waitFor({ state: 'visible', timeout: 10000 });
+      await this.accountMenu.click();
+      await this.registerLink.waitFor({ state: 'visible', timeout: 3000 });
       await this.registerLink.click();
+      await this.page.waitForSelector('#input-firstname', { state: 'visible', timeout: 10000 });
       return;
+    } catch {
+      const baseURL = process.env.URL || '';
+      await this.page.goto(new URL('index.php?route=account/register', baseURL).toString(), { waitUntil: 'domcontentloaded' });
+      await this.page.waitForSelector('#input-firstname', { state: 'visible', timeout: 10000 });
     }
-
-    // Fallback to direct registration URL when the dropdown does not show the link.
-    await this.page.goto('index.php?route=account/register');
   }
 }
