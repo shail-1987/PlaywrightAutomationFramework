@@ -7,13 +7,13 @@ const baseURL = process.env.URL;
 const email = process.env.EMAIL;
 const password = process.env.PASSWORD;
 
-if (!baseURL) {
+if (!baseURL && !process.env.JENKINS_HOME) {
   throw new Error('URL environment variable is not set. Please set URL in the .env file.');
 }
-if (!email) {
+if (!email && !process.env.JENKINS_HOME) {
   throw new Error('EMAIL environment variable is not set. Please set EMAIL in the .env file.');
 }
-if (!password) {
+if (!password && !process.env.JENKINS_HOME) {
   throw new Error('PASSWORD environment variable is not set. Please set PASSWORD in the .env file.');
 }
 

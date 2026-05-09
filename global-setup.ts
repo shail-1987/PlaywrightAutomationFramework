@@ -6,7 +6,7 @@ dotenv.config();
 async function globalSetup(config: FullConfig) {
   const { URL: baseURL, EMAIL, PASSWORD } = process.env;
 
-  if (!baseURL || !EMAIL || !PASSWORD) {
+  if ((!baseURL || !EMAIL || !PASSWORD) && !process.env.JENKINS_HOME) {
     throw new Error('URL, EMAIL, and PASSWORD environment variables are required for global setup.');
   }
 
