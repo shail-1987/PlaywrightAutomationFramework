@@ -32,6 +32,7 @@ export class HomePage extends BasePage {
   }
   async openRegister(): Promise<void> {
     await this.accountMenu.click();
+    await this.registerLink.waitFor();
     await this.registerLink.click();
   }
 }
