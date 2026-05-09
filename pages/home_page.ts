@@ -34,20 +34,16 @@ export class HomePage extends BasePage {
   }
 
   async openRegister(): Promise<void> {
-    // Attempt the UI flow first, but fall back to direct navigation if the dropdown fails.
-    await this.goto('');
+    // Navigate directly to the register page for reliability in CI.
+    const baseURL = process.env.URL || '';
+    await this.page.goto(new URL('index.php?route=account/register', baseURL).toString(), { waitUntil: 'load' });
+    await this.page.waitForLoadState('networkidle');
+    await this.page.locator('#input-firstname').waitFor({ state: 'attached', timeout: 30000 });
+  }
 
-    try {
-      await this.accountMenu.waitFor({ state: 'visible', timeout: 10000 });
-      await this.accountMenu.click();
-      await this.registerLink.waitFor({ state: 'visible', timeout: 3000 });
-      await this.registerLink.click();
-      await this.page.waitForSelector('#input-firstname', { state: 'visible', timeout: 10000 });
-      return;
-    } catch {
-      const baseURL = process.env.URL || '';
-      await this.page.goto(new URL('index.php?route=account/register', baseURL).toString(), { waitUntil: 'domcontentloaded' });
-      await this.page.waitForSelector('#input-firstname', { state: 'visible', timeout: 10000 });
-    }
+  async logout(): Promise<void> {
+    // Navigate to the logout page to ensure the user is logged out.
+    const baseURL = process.env.URL || '';
+    await this.page.goto(new URL('index.php?route=account/logout', baseURL).toString());
   }
 }

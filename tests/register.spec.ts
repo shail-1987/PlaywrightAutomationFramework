@@ -9,6 +9,9 @@ test('Register New User', async ({ page, registerPage, homePage }) => {
   // Start from the application home page.
   await homePage.navigate();
 
+  // Ensure the user is logged out before registering.
+  await homePage.logout();
+
   // Open the registration page.
   await homePage.openRegister();
 
