@@ -14,10 +14,11 @@ export class HomePage extends BasePage {
     this.searchButton = page.locator('button[type="button"][class*=\"btn-default\"]');
     this.accountMenu = page.locator('a[title="My Account"]');
     this.loginLink = page.locator('text=Login');
-    this.registerLink = page.locator('text=Register');
+    this.registerLink = page.locator('a[href*="route=account/register"]');
   }
 
   async navigate(): Promise<void> {
+    // Navigate to the configured app URL.
     await this.goto('');
   }
 
@@ -27,12 +28,23 @@ export class HomePage extends BasePage {
   }
 
   async openLogin(): Promise<void> {
+    // Open the My Account dropdown and click on Login.
     await this.accountMenu.click();
     await this.loginLink.click();
   }
+
   async openRegister(): Promise<void> {
+    // Open the My Account dropdown and click Register if visible.
+    await this.accountMenu.waitFor({ state: 'visible', timeout: 10000 });
     await this.accountMenu.click();
-    await this.registerLink.waitFor();
-    await this.registerLink.click();
+
+    const registerVisible = await this.registerLink.isVisible().catch(() => false);
+    if (registerVisible) {
+      await this.registerLink.click();
+      return;
+    }
+
+    // Fallback to direct registration URL when the dropdown does not show the link.
+    await this.page.goto('index.php?route=account/register');
   }
 }

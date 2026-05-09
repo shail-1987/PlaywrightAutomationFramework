@@ -4,29 +4,32 @@ import { LoginPage } from '../pages/login_page';
 import { RegisterPage } from '../pages/register_page';
 
 type MyFixtures = {
-homePage: HomePage;
-loginPage: LoginPage;
-loggedInPage: Page;
-registerPage: RegisterPage;
+  homePage: HomePage;
+  loginPage: LoginPage;
+  loggedInPage: Page;
+  registerPage: RegisterPage;
 };
 
-export const test = base.extend<MyFixtures>({   //extend = Playwright के default test में extra features (fixtures) add करना
+export const test = base.extend<MyFixtures>({
+  // Extend the default Playwright test with custom page objects.
+  homePage: async ({ page }, use) => {
+    await use(new HomePage(page));
+  },
 
-homePage: async ({ page }, use) => {            //use = current running test को data देना
-await use(new HomePage(page));
-},
+  loginPage: async ({ page }, use) => {
+    await use(new LoginPage(page));
+  },
 
-loginPage: async ({ page }, use) => {
-await use(new LoginPage(page));
-},
-registerPage: async ({ page }, use) => {
-await use(new RegisterPage(page));
-},
+  registerPage: async ({ page }, use) => {
+    await use(new RegisterPage(page));
+  },
 
-// 🔥 AUTO LOGIN FIXTURE
-loggedInPage: async ({ page }, use) => {
-  await page.goto('index.php?route=account/account');
-  await use(page);
-}
-
+  // Authenticated fixture: use storageState only for tests that need a signed-in user.
+  loggedInPage: async ({ browser }, use) => {
+    const context = await browser.newContext({ storageState: 'storageState.json' });
+    const page = await context.newPage();
+    await page.goto('index.php?route=account/account');
+    await use(page);
+    await context.close();
+  },
 });
