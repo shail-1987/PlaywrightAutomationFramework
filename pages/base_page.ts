@@ -1,4 +1,4 @@
-
+//this is base class made by me 
 import type { Page } from '@playwright/test';
 
 export class BasePage {
