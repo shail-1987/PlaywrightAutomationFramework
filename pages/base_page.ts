@@ -15,4 +15,4 @@ async goto(path = ''): Promise<void> {
   }
 
 }
-//demoChange_new
+//demoChange_new_autoTrigger
