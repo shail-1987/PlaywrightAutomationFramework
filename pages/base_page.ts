@@ -11,5 +11,8 @@ export class BasePage {
   
 async goto(path = ''): Promise<void> {
     await this.page.goto(path, { waitUntil: 'load' });
+
   }
+
 }
+//demoChange
