@@ -19,7 +19,7 @@ steps:
   displayName: Install Playwright Browsers
 
 - script: |
-    npx playwright test --project=chrome --headless
+    npx playwright test --project=chrome
   displayName: Run Playwright Tests
 
 - task: PublishPipelineArtifact@1
