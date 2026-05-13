@@ -11,6 +11,7 @@ if (existsSync('.env')) {
 const baseURL = process.env.URL;
 const email = process.env.EMAIL;
 const password = process.env.PASSWORD;
+const isCI = process.env.CI === 'true' || process.env.CI === '1' || Boolean(process.env.CI);
 
 if (!baseURL) {
   throw new Error('URL environment variable is not set. Please set URL in the .env file or export it in CI.');
@@ -40,9 +41,8 @@ export default defineConfig({
       name: 'chrome',
       use: {
         browserName: 'chromium',
-        ...(process.env.CI
-          ? { headless: true }
-          : { channel: 'chrome', headless: false }),
+        headless: isCI,
+        channel: isCI ? undefined : 'chrome',
       },
     },
   ],

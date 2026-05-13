@@ -22,6 +22,7 @@ steps:
     npx playwright test --project=chrome
   displayName: Run Playwright Tests
   env:
+    CI: 'true'
     URL: https://naveenautomationlabs.com/opencart/
     EMAIL: prakashshailendra45@gmail.com
     PASSWORD: Jaymanti@123
