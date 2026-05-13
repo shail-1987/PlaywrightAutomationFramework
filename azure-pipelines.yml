@@ -4,11 +4,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  URL: $(PLAYWRIGHT_URL)
-  EMAIL: $(PLAYWRIGHT_EMAIL)
-  PASSWORD: $(PLAYWRIGHT_PASSWORD)
-
 steps:
 - task: NodeTool@0
   inputs:
@@ -26,6 +21,10 @@ steps:
 - script: |
     npx playwright test --project=chrome
   displayName: Run Playwright Tests
+  env:
+    URL: https://naveenautomationlabs.com/opencart/
+    EMAIL: prakashshailendra45@gmail.com
+    PASSWORD: Jaymanti@123
 
 - task: PublishPipelineArtifact@1
   inputs:
