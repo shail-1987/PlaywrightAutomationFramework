@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --project=chrome --headed",
-    "test:chrome": "npx playwright test --project=chrome --headed",
+    "test": "npx playwright test --project=chrome",
+    "test:chrome": "npx playwright test --project=chrome",
     "test:ci": "npx playwright test --project=chrome --headless",
     "report": "npx playwright show-report"
   },
