@@ -15,5 +15,4 @@ async goto(path = ''): Promise<void> {
   }
 
 }
-//demoChange_new_autoTrigger_final
-//Showing demo to Lovely_sis_hhhh
+//showing auto trigger mechanism for Azure DevOps_Laxmi
