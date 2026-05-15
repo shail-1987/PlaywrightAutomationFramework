@@ -29,10 +29,10 @@ export default defineConfig({
   timeout: 30 * 1000,
   retries: 0,
   reporter: [
-    ['list'], 
-    ['html', { open: 'never' }],
-    ['junit', { outputFile: 'results.xml' }]
-  ],
+  ['list'],
+  ['html', { open: 'never' }],
+  ['junit', { outputFile: 'results.xml' }]
+],
   globalSetup: require.resolve('./global-setup'),
   use: {
     baseURL,
