@@ -1,5 +1,8 @@
 trigger:
-- feature
+branches:
+include:
+- feature/*
+- main
 
 pool:
   vmImage: ubuntu-latest
