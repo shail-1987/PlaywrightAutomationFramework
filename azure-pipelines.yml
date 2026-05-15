@@ -9,10 +9,6 @@ pool:
 
 steps:
 
-- task: DockerInstaller@0
-  inputs:
-    dockerVersion: 'latest'
-
 - script: |
     docker build -t playwright-docker .
   displayName: Build Docker Image
