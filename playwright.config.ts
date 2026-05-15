@@ -28,7 +28,11 @@ export default defineConfig({
   testDir: './tests',
   timeout: 30 * 1000,
   retries: 0,
-  reporter: [['list'], ['html', { open: 'never' }]],
+  reporter: [
+    ['list'], 
+    ['html', { open: 'never' }],
+    ['junit', { outputFile: 'results.xml' }]
+  ],
   globalSetup: require.resolve('./global-setup'),
   use: {
     baseURL,
@@ -41,8 +45,9 @@ export default defineConfig({
       name: 'chrome',
       use: {
         browserName: 'chromium',
-        headless: isCI,
-        channel: isCI ? undefined : 'chrome',
+        headless: true,
+       // channel: isCI ? undefined : 'chrome',
+       channel:undefined,
       },
     },
   ],

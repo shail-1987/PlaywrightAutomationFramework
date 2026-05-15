@@ -1,40 +1,28 @@
 trigger:
-  branches:
-    include:
-      - main
-      - feature/*
-
-pr:
-  branches:
-    include:
-      - main
-      - feature/*
+- feature
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: NodeTool@0
+
+- task: DockerInstaller@0
   inputs:
-    versionSpec: '18.x'
-  displayName: Install Node.js
+    dockerVersion: 'latest'
 
 - script: |
-    npm install
-  displayName: Install Dependencies
+    docker build -t playwright-docker .
+  displayName: Build Docker Image
 
 - script: |
-    npx playwright install --with-deps
-  displayName: Install Playwright Browsers
+    docker run playwright-docker
+  displayName: Run Playwright Tests Inside Docker
 
-- script: |
-    npx playwright test --project=chrome
-  displayName: Run Playwright Tests
-  env:
-    CI: 'true'
-    URL: https://naveenautomationlabs.com/opencart/
-    EMAIL: prakashshailendra45@gmail.com
-    PASSWORD: Jaymanti@123
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/results.xml'
+  condition: succeededOrFailed()
 
 - task: PublishPipelineArtifact@1
   inputs:
