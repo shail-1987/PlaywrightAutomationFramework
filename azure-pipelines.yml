@@ -1,11 +1,11 @@
 trigger:
-branches:
-include:
-- feature/*
-- main
+  branches:
+    include:
+      - feature/*
+      - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
 
