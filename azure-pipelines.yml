@@ -14,12 +14,12 @@ steps:
   displayName: Build Docker Image
 
 - script: |
+    mkdir -p $(System.DefaultWorkingDirectory)/playwright-report
+
     docker run --rm \
       -v $(System.DefaultWorkingDirectory)/playwright-report:/app/playwright-report \
-      -v $(System.DefaultWorkingDirectory):/app \
       playwright-docker
   displayName: Run Playwright Tests Inside Docker
-
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
