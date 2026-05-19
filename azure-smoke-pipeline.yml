@@ -10,15 +10,15 @@ trigger:
 pr: none
 
 schedules:
-  - cron: '10 13 * * *'   # Run daily at 13:10 UTC (06:40 PM IST)
-    displayName: 'Daily smoke schedule'
+  - cron: "10 13 * * *" # Run daily at 13:10 UTC (06:40 PM IST)
+    displayName: "Daily smoke schedule"
     branches:
       include:
         - main
     always: true
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: "ubuntu-latest"
 
 variables:
   CONTAINER_IMAGE: playwright-docker
@@ -26,32 +26,31 @@ variables:
   JUNIT_FILE: $(System.DefaultWorkingDirectory)/results.xml
 
 steps:
-- checkout: self
+  - checkout: self
 
-- script: |
-    docker build --no-cache -t $(CONTAINER_IMAGE) .
-  displayName: 'Build Playwright Docker image'
+  - script: |
+      docker build --no-cache -t $(CONTAINER_IMAGE) .
+    displayName: "Build Playwright Docker image"
 
-- script: |
-    mkdir -p "$(REPORT_DIR)"
-    docker run --rm \
-      -v "$(System.DefaultWorkingDirectory):/app" \
-      -w /app \
-      $(CONTAINER_IMAGE) \
-      npx playwright test --project=chrome --grep "@smoke" --reporter=list,junit,html
-  displayName: 'Run smoke tests inside Docker'
+  - script: |
+      mkdir -p "$(REPORT_DIR)"
+      docker run --rm \
+        -w /app \
+        $(CONTAINER_IMAGE) \
+        npx playwright test --project=chrome --grep "@smoke" --reporter=list,junit,html
+    displayName: "Run smoke tests inside Docker"
 
-- task: PublishTestResults@2
-  displayName: 'Publish JUnit test results'
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '**/results.xml'
-    failTaskOnFailedTests: false
-  condition: succeededOrFailed()
+  - task: PublishTestResults@2
+    displayName: "Publish JUnit test results"
+    inputs:
+      testResultsFormat: "JUnit"
+      testResultsFiles: "**/results.xml"
+      failTaskOnFailedTests: false
+    condition: succeededOrFailed()
 
-- task: PublishPipelineArtifact@1
-  displayName: 'Publish Playwright HTML report artifact'
-  inputs:
-    targetPath: '$(REPORT_DIR)'
-    artifact: 'playwright-report'
-  condition: succeededOrFailed()
+  - task: PublishPipelineArtifact@1
+    displayName: "Publish Playwright HTML report artifact"
+    inputs:
+      targetPath: "$(REPORT_DIR)"
+      artifact: "playwright-report"
+    condition: succeededOrFailed()
