@@ -8,7 +8,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 schedules:
-  - cron: '57 18 * * *'   # Run daily at 17:00 UTC
+  - cron: '5 19 * * *'   # Run daily at 17:00 UTC
     displayName: 'Daily sanity schedule'
     branches:
       include:
@@ -30,7 +30,6 @@ steps:
 - script: |
     mkdir -p "$(REPORT_DIR)"
     docker run --rm \
-      -v $(System.DefaultWorkingDirectory):/app \
       -w /app \
       $(CONTAINER_IMAGE) \
       npm run test:sanity
