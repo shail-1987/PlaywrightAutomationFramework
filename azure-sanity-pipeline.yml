@@ -8,7 +8,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 schedules:
-  - cron: '48 17 * * *'   # Run daily at 17:00 UTC
+  - cron: '58 17 * * *'   # Run daily at 17:00 UTC
     displayName: 'Daily sanity schedule'
     branches:
       include:
@@ -30,10 +30,10 @@ steps:
 - script: |
     mkdir -p "$(REPORT_DIR)"
     docker run --rm \
-     -v $(pwd):/app \
-     -w /app \
+      -v $(System.DefaultWorkingDirectory):/app \
+      -w /app \
       $(CONTAINER_IMAGE) \
-      sh -c "pwd && ls -la && npx playwright test --project=chrome --grep '@sanity' --reporter=list,junit,html"
+      npm run test:sanity
   displayName: 'Run sanity tests inside Docker'
 
 - task: PublishTestResults@2
