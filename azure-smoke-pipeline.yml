@@ -38,7 +38,7 @@ steps:
       -v "$(System.DefaultWorkingDirectory):/app" \
       -w /app \
       $(CONTAINER_IMAGE) \
-      npx playwright test --project=chrome --grep "@smoke" --reporter=list,junit=results.xml,html=playwright-report
+      npx playwright test --project=chrome --grep "@smoke" --reporter=list,junit,html=playwright-report
   displayName: 'Run smoke tests inside Docker'
 
 - task: PublishTestResults@2
