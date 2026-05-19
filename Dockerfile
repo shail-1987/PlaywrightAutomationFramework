@@ -4,9 +4,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --force
-
-RUN npm list @playwright/test
+RUN npm install
 
 RUN npx playwright install --with-deps
 
