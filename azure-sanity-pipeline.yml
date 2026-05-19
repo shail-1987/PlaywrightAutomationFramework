@@ -8,11 +8,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 schedules:
-  - cron: '30 15 * * *'   # Run daily at 17:00 UTC
+  - cron: '40 15 * * *'   # Run daily at 17:00 UTC
     displayName: 'Daily sanity schedule'
     branches:
       include:
-        - main
+        - feature/playwright_Automation_shail
     always: true
 
 variables:
