@@ -1,6 +1,7 @@
 From mcr.microsoft.com/playwright:v1.59.1-noble
 WORKDIR /app
 COPY package*.json ./
-RUN npm install --include=dev
+RUN npm ci --include=dev
+RUN npx playwright install --with-deps
 COPY . .
 CMD ["npx", "playwright", "test"]
