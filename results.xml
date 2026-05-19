@@ -1,0 +1,78 @@
+<testsuites id="" name="" tests="32" failures="0" skipped="0" errors="0" time="37.620264000000006">
+<testsuite name="account_info.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="2" failures="0" skipped="0" time="3.47" errors="0">
+<testcase name="@smoke Account information page tests › should display the My Account heading after login" classname="account_info.spec.ts" time="1.958">
+</testcase>
+<testcase name="@smoke Account information page tests › should show edit account information link" classname="account_info.spec.ts" time="1.512">
+</testcase>
+</testsuite>
+<testsuite name="address_book.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="2" failures="0" skipped="0" time="3.518" errors="0">
+<testcase name="@smoke Address book page tests › should display the address book link on My Account page" classname="address_book.spec.ts" time="1.811">
+</testcase>
+<testcase name="@smoke Address book page tests › should navigate to address book page" classname="address_book.spec.ts" time="1.707">
+</testcase>
+</testsuite>
+<testsuite name="change_password.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="2" failures="0" skipped="0" time="3.576" errors="0">
+<testcase name="@smoke Change password page tests › should display change password link on My Account page" classname="change_password.spec.ts" time="1.961">
+</testcase>
+<testcase name="@smoke Change password page tests › should navigate to change password page" classname="change_password.spec.ts" time="1.615">
+</testcase>
+</testsuite>
+<testsuite name="login_page.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="12" failures="0" skipped="0" time="14.94" errors="0">
+<testcase name="@smoke Login UI tests › should open the login page from the home page" classname="login_page.spec.ts" time="2.67">
+</testcase>
+<testcase name="@smoke Login UI tests › should display the Returning Customer heading" classname="login_page.spec.ts" time="1.145">
+</testcase>
+<testcase name="@smoke Login UI tests › should display the email input field" classname="login_page.spec.ts" time="1.047">
+</testcase>
+<testcase name="@smoke Login UI tests › should display the password input field" classname="login_page.spec.ts" time="1.098">
+</testcase>
+<testcase name="@smoke Login UI tests › should display the login button" classname="login_page.spec.ts" time="1.163">
+</testcase>
+<testcase name="@smoke Login UI tests › should allow typing into the email field" classname="login_page.spec.ts" time="1.066">
+</testcase>
+<testcase name="@smoke Login UI tests › should allow typing into the password field" classname="login_page.spec.ts" time="1.176">
+</testcase>
+<testcase name="@smoke Login UI tests › should show forgotten password link on login page" classname="login_page.spec.ts" time="1.197">
+</testcase>
+<testcase name="@smoke Login UI tests › should verify login page URL contains the login route" classname="login_page.spec.ts" time="1.006">
+</testcase>
+<testcase name="@smoke Login UI tests › should display a login button with the correct label" classname="login_page.spec.ts" time="1.062">
+</testcase>
+<testcase name="@smoke Login UI tests › should show My Account menu on login page" classname="login_page.spec.ts" time="0.985">
+</testcase>
+<testcase name="@smoke Login UI tests › should navigate to the register page from login page" classname="login_page.spec.ts" time="1.325">
+</testcase>
+</testsuite>
+<testsuite name="register.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="12" failures="0" skipped="0" time="28.928" errors="0">
+<testcase name="@smoke Registration UI tests › should display the registration page heading" classname="register.spec.ts" time="2.38">
+</testcase>
+<testcase name="@smoke Registration UI tests › should display first name field" classname="register.spec.ts" time="2.903">
+</testcase>
+<testcase name="@smoke Registration UI tests › should display last name field" classname="register.spec.ts" time="2.479">
+</testcase>
+<testcase name="@smoke Registration UI tests › should display email field" classname="register.spec.ts" time="2.585">
+</testcase>
+<testcase name="@smoke Registration UI tests › should display telephone field" classname="register.spec.ts" time="2.522">
+</testcase>
+<testcase name="@smoke Registration UI tests › should display password field" classname="register.spec.ts" time="2.299">
+</testcase>
+<testcase name="@smoke Registration UI tests › should display confirm password field" classname="register.spec.ts" time="2.356">
+</testcase>
+<testcase name="@smoke Registration UI tests › should display privacy policy checkbox" classname="register.spec.ts" time="2.502">
+</testcase>
+<testcase name="@smoke Registration UI tests › should display continue button" classname="register.spec.ts" time="2.322">
+</testcase>
+<testcase name="@smoke Registration UI tests › should verify register page route" classname="register.spec.ts" time="2.233">
+</testcase>
+<testcase name="@smoke Registration UI tests › should navigate to login from the register page" classname="register.spec.ts" time="2.125">
+</testcase>
+<testcase name="@smoke Registration UI tests › should allow telephone field to accept numeric input" classname="register.spec.ts" time="2.222">
+</testcase>
+</testsuite>
+<testsuite name="wishlist.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="2" failures="0" skipped="0" time="3.658" errors="0">
+<testcase name="@smoke Wishlist page tests › should display the wishlist link on My Account page" classname="wishlist.spec.ts" time="1.88">
+</testcase>
+<testcase name="@smoke Wishlist page tests › should navigate to wishlist page" classname="wishlist.spec.ts" time="1.778">
+</testcase>
+</testsuite>
+</testsuites>

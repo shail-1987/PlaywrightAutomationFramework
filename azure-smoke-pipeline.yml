@@ -1,0 +1,49 @@
+# Smoke pipeline: runs only @smoke tests on pushes to main and feature/* branches.
+# This pipeline uses Docker and publishes both JUnit and HTML reports.
+
+trigger:
+  branches:
+    include:
+      - main
+      - feature/*
+
+pr: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  CONTAINER_IMAGE: playwright-docker
+  REPORT_DIR: $(System.DefaultWorkingDirectory)/playwright-report
+  JUNIT_FILE: $(System.DefaultWorkingDirectory)/results.xml
+
+steps:
+- checkout: self
+
+- script: |
+    docker build -t $(CONTAINER_IMAGE) .
+  displayName: 'Build Playwright Docker image'
+
+- script: |
+    mkdir -p "$(REPORT_DIR)"
+    docker run --rm \
+      -v "$(System.DefaultWorkingDirectory):/app" \
+      -w /app \
+      $(CONTAINER_IMAGE) \
+      npx playwright test --project=chrome --grep "@smoke" --reporter=list,junit=results.xml,html=playwright-report
+  displayName: 'Run smoke tests inside Docker'
+
+- task: PublishTestResults@2
+  displayName: 'Publish JUnit test results'
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/results.xml'
+    failTaskOnFailedTests: false
+  condition: succeededOrFailed()
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Playwright HTML report artifact'
+  inputs:
+    targetPath: '$(REPORT_DIR)'
+    artifact: 'playwright-report'
+  condition: succeededOrFailed()

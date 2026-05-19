@@ -1,5 +1,7 @@
 import { defineConfig } from '@playwright/test';
-import dotenv from 'dotenv';
+import dotenv from 'dotenv'; //dotenv is a Node.js package used to load values from a .env file into your application.
+//dotenv is used to load environment variables from a .env file into process.env, helping us manage sensitive data like credentials, 
+//URLs, and API keys securely without hardcoding them in the framework.
 import { existsSync } from 'fs';
 
 // Load local environment variables from .env when running on a developer machine.
@@ -33,7 +35,7 @@ export default defineConfig({
   ['html', { open: 'never' }],
   ['junit', { outputFile: 'results.xml' }]
 ],
-  globalSetup: require.resolve('./global-setup'),
+  globalSetup: require.resolve('./global-setup'),//
   use: {
     baseURL,
     actionTimeout: 0,

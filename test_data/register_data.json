@@ -1,0 +1,12 @@
+{
+  "invalidEmail": "invalid-email",
+  "invalidTelephone": "phone-abc",
+  "shortPassword": "123",
+  "sampleUser": {
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "test.user@example.com",
+    "telephone": "1234567890",
+    "password": "TestPassword123"
+  }
+}
