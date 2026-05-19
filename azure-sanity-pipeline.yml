@@ -8,7 +8,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 schedules:
-  - cron: '23 17 * * *'   # Run daily at 17:00 UTC
+  - cron: '33 17 * * *'   # Run daily at 17:00 UTC
     displayName: 'Daily sanity schedule'
     branches:
       include:
@@ -24,7 +24,7 @@ steps:
 - checkout: self
 
 - script: |
-    docker build -t $(CONTAINER_IMAGE) .
+    docker build --no-cache -t $(CONTAINER_IMAGE) .
   displayName: 'Build Playwright Docker image'
 
 - script: |
