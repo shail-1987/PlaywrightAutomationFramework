@@ -8,7 +8,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 schedules:
-  - cron: '0 17 * * *'   # Run daily at 17:00 UTC
+  - cron: '6 14 * * *'   # Run daily at 17:00 UTC
     displayName: 'Daily sanity schedule'
     branches:
       include:
