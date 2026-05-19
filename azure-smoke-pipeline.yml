@@ -29,7 +29,7 @@ steps:
 - checkout: self
 
 - script: |
-    docker build -t $(CONTAINER_IMAGE) .
+    docker build --no-cache -t $(CONTAINER_IMAGE) .
   displayName: 'Build Playwright Docker image'
 
 - script: |
