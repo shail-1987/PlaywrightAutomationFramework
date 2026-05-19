@@ -37,7 +37,7 @@ steps:
   displayName: 'Run sanity tests inside Docker'
 
 - task: PublishTestResults@2
-  displayName: 'Publish JUnit test results'
+  - cron: '10 13 * * *'   # Run daily at 13:10 UTC (06:40 PM IST)
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/results.xml'
