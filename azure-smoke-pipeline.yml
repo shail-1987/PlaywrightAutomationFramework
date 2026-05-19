@@ -9,6 +9,14 @@ trigger:
 
 pr: none
 
+schedules:
+  - cron: '10 13 * * *'   # Run daily at 13:10 UTC (06:40 PM IST)
+    displayName: 'Daily smoke schedule'
+    branches:
+      include:
+        - main
+    always: true
+
 pool:
   vmImage: 'ubuntu-latest'
 
