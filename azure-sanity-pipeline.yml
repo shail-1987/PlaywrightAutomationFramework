@@ -30,7 +30,7 @@ steps:
 - script: |
     mkdir -p "$(REPORT_DIR)"
     docker run --rm \
-      -v "$(System.DefaultWorkingDirectory):/app" \
+      -v $(System.DefaultWorkingDirectory):/app \
       -w /app \
       $(CONTAINER_IMAGE) \
       npx playwright test --project=chrome --grep "@sanity" --reporter=list,junit,html
