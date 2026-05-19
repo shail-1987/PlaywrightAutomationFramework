@@ -44,4 +44,4 @@ test.describe('@sanity Account information functional tests', () => {
     await expect(editAccountPage.continueButton).toBeVisible();
   });
 });
-//testing git
+//testing git...
