@@ -30,10 +30,10 @@ steps:
 - script: |
     mkdir -p "$(REPORT_DIR)"
     docker run --rm \
-      -v $(pwd):/app \
-      -w /app \
+     -v $(pwd):/app \
+     -w /app \
       $(CONTAINER_IMAGE) \
-      npx playwright test --project=chrome --grep "@sanity" --reporter=list,junit,html
+      sh -c "pwd && ls -la && npx playwright test --project=chrome --grep '@sanity' --reporter=list,junit,html"
   displayName: 'Run sanity tests inside Docker'
 
 - task: PublishTestResults@2
