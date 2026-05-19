@@ -35,7 +35,7 @@ export default defineConfig({
   ['html', { open: 'never' }],
   ['junit', { outputFile: 'results.xml' }]
 ],
-  //globalSetup: require.resolve('./global-setup'),//
+  globalSetup: require.resolve('./global-setup'),//
   use: {
     baseURL,
     actionTimeout: 0,
