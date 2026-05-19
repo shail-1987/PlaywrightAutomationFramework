@@ -1,12 +1,10 @@
-FROM mcr.microsoft.com/playwright:v1.59.1-noble
+FROM mcr.microsoft.com/playwright:v1.49.0-jammy
 
 WORKDIR /app
 
 COPY package*.json ./
-COPY .env .
 
-RUN npm ci --include=dev
-RUN npx playwright install --with-deps
+RUN npm install
 
 COPY . .
 
