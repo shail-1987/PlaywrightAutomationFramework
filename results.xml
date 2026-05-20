@@ -1,78 +1,70 @@
-<testsuites id="" name="" tests="32" failures="0" skipped="0" errors="0" time="37.620264000000006">
-<testsuite name="account_info.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="2" failures="0" skipped="0" time="3.47" errors="0">
-<testcase name="@smoke Account information page tests › should display the My Account heading after login" classname="account_info.spec.ts" time="1.958">
+<testsuites id="" name="" tests="28" failures="0" skipped="0" errors="0" time="68.599181">
+<testsuite name="account_info.spec.ts" timestamp="2026-05-20T08:52:04.722Z" hostname="chrome" tests="2" failures="0" skipped="0" time="9.991" errors="0">
+<testcase name="@sanity Account information functional tests › should open edit account information page" classname="account_info.spec.ts" time="5.264">
 </testcase>
-<testcase name="@smoke Account information page tests › should show edit account information link" classname="account_info.spec.ts" time="1.512">
-</testcase>
-</testsuite>
-<testsuite name="address_book.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="2" failures="0" skipped="0" time="3.518" errors="0">
-<testcase name="@smoke Address book page tests › should display the address book link on My Account page" classname="address_book.spec.ts" time="1.811">
-</testcase>
-<testcase name="@smoke Address book page tests › should navigate to address book page" classname="address_book.spec.ts" time="1.707">
+<testcase name="@sanity Account information functional tests › should keep account information form visible on edit page" classname="account_info.spec.ts" time="4.727">
 </testcase>
 </testsuite>
-<testsuite name="change_password.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="2" failures="0" skipped="0" time="3.576" errors="0">
-<testcase name="@smoke Change password page tests › should display change password link on My Account page" classname="change_password.spec.ts" time="1.961">
+<testsuite name="address_book.spec.ts" timestamp="2026-05-20T08:52:04.722Z" hostname="chrome" tests="2" failures="0" skipped="0" time="6.824" errors="0">
+<testcase name="@sanity Address book functional tests › should display the address book heading" classname="address_book.spec.ts" time="2.072">
 </testcase>
-<testcase name="@smoke Change password page tests › should navigate to change password page" classname="change_password.spec.ts" time="1.615">
-</testcase>
-</testsuite>
-<testsuite name="login_page.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="12" failures="0" skipped="0" time="14.94" errors="0">
-<testcase name="@smoke Login UI tests › should open the login page from the home page" classname="login_page.spec.ts" time="2.67">
-</testcase>
-<testcase name="@smoke Login UI tests › should display the Returning Customer heading" classname="login_page.spec.ts" time="1.145">
-</testcase>
-<testcase name="@smoke Login UI tests › should display the email input field" classname="login_page.spec.ts" time="1.047">
-</testcase>
-<testcase name="@smoke Login UI tests › should display the password input field" classname="login_page.spec.ts" time="1.098">
-</testcase>
-<testcase name="@smoke Login UI tests › should display the login button" classname="login_page.spec.ts" time="1.163">
-</testcase>
-<testcase name="@smoke Login UI tests › should allow typing into the email field" classname="login_page.spec.ts" time="1.066">
-</testcase>
-<testcase name="@smoke Login UI tests › should allow typing into the password field" classname="login_page.spec.ts" time="1.176">
-</testcase>
-<testcase name="@smoke Login UI tests › should show forgotten password link on login page" classname="login_page.spec.ts" time="1.197">
-</testcase>
-<testcase name="@smoke Login UI tests › should verify login page URL contains the login route" classname="login_page.spec.ts" time="1.006">
-</testcase>
-<testcase name="@smoke Login UI tests › should display a login button with the correct label" classname="login_page.spec.ts" time="1.062">
-</testcase>
-<testcase name="@smoke Login UI tests › should show My Account menu on login page" classname="login_page.spec.ts" time="0.985">
-</testcase>
-<testcase name="@smoke Login UI tests › should navigate to the register page from login page" classname="login_page.spec.ts" time="1.325">
+<testcase name="@sanity Address book functional tests › should display the New Address action on address book page" classname="address_book.spec.ts" time="4.752">
 </testcase>
 </testsuite>
-<testsuite name="register.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="12" failures="0" skipped="0" time="28.928" errors="0">
-<testcase name="@smoke Registration UI tests › should display the registration page heading" classname="register.spec.ts" time="2.38">
+<testsuite name="change_password.spec.ts" timestamp="2026-05-20T08:52:04.722Z" hostname="chrome" tests="2" failures="0" skipped="0" time="6.91" errors="0">
+<testcase name="@sanity Change password functional tests › should display change password fields" classname="change_password.spec.ts" time="4.909">
 </testcase>
-<testcase name="@smoke Registration UI tests › should display first name field" classname="register.spec.ts" time="2.903">
-</testcase>
-<testcase name="@smoke Registration UI tests › should display last name field" classname="register.spec.ts" time="2.479">
-</testcase>
-<testcase name="@smoke Registration UI tests › should display email field" classname="register.spec.ts" time="2.585">
-</testcase>
-<testcase name="@smoke Registration UI tests › should display telephone field" classname="register.spec.ts" time="2.522">
-</testcase>
-<testcase name="@smoke Registration UI tests › should display password field" classname="register.spec.ts" time="2.299">
-</testcase>
-<testcase name="@smoke Registration UI tests › should display confirm password field" classname="register.spec.ts" time="2.356">
-</testcase>
-<testcase name="@smoke Registration UI tests › should display privacy policy checkbox" classname="register.spec.ts" time="2.502">
-</testcase>
-<testcase name="@smoke Registration UI tests › should display continue button" classname="register.spec.ts" time="2.322">
-</testcase>
-<testcase name="@smoke Registration UI tests › should verify register page route" classname="register.spec.ts" time="2.233">
-</testcase>
-<testcase name="@smoke Registration UI tests › should navigate to login from the register page" classname="register.spec.ts" time="2.125">
-</testcase>
-<testcase name="@smoke Registration UI tests › should allow telephone field to accept numeric input" classname="register.spec.ts" time="2.222">
+<testcase name="@sanity Change password functional tests › should display continue button on change password page" classname="change_password.spec.ts" time="2.001">
 </testcase>
 </testsuite>
-<testsuite name="wishlist.spec.ts" timestamp="2026-05-19T10:07:02.771Z" hostname="chrome" tests="2" failures="0" skipped="0" time="3.658" errors="0">
-<testcase name="@smoke Wishlist page tests › should display the wishlist link on My Account page" classname="wishlist.spec.ts" time="1.88">
+<testsuite name="login_page.spec.ts" timestamp="2026-05-20T08:52:04.722Z" hostname="chrome" tests="9" failures="0" skipped="0" time="25.01" errors="0">
+<testcase name="@sanity Login functional tests › should login successfully with valid credentials" classname="login_page.spec.ts" time="5.071">
 </testcase>
-<testcase name="@smoke Wishlist page tests › should navigate to wishlist page" classname="wishlist.spec.ts" time="1.778">
+<testcase name="@sanity Login functional tests › should show warning for invalid email" classname="login_page.spec.ts" time="1.321">
+</testcase>
+<testcase name="@sanity Login functional tests › should show warning for invalid password" classname="login_page.spec.ts" time="4.973">
+</testcase>
+<testcase name="@sanity Login functional tests › should show warning when email is empty" classname="login_page.spec.ts" time="1.552">
+</testcase>
+<testcase name="@sanity Login functional tests › should show warning when password is empty" classname="login_page.spec.ts" time="1.58">
+</testcase>
+<testcase name="@sanity Login functional tests › should allow submitting the form with Enter key" classname="login_page.spec.ts" time="3.019">
+</testcase>
+<testcase name="@sanity Login functional tests › should keep form values after failed login attempt" classname="login_page.spec.ts" time="1.756">
+</testcase>
+<testcase name="@sanity Login functional tests › should allow switching to login page again after navigation away" classname="login_page.spec.ts" time="3.668">
+</testcase>
+<testcase name="@sanity Login functional tests › should log in with lower-case email even if typed in mixed case" classname="login_page.spec.ts" time="2.07">
+</testcase>
+</testsuite>
+<testsuite name="register.spec.ts" timestamp="2026-05-20T08:52:04.722Z" hostname="chrome" tests="11" failures="0" skipped="0" time="61.145" errors="0">
+<testcase name="@sanity Registration functional tests › should register a new user successfully" classname="register.spec.ts" time="8.329">
+</testcase>
+<testcase name="@sanity Registration functional tests › should show error for invalid email format" classname="register.spec.ts" time="2.826">
+</testcase>
+<testcase name="@sanity Registration functional tests › should show error for missing first name" classname="register.spec.ts" time="6.918">
+</testcase>
+<testcase name="@sanity Registration functional tests › should show error for missing last name" classname="register.spec.ts" time="3.137">
+</testcase>
+<testcase name="@sanity Registration functional tests › should show error for missing email address" classname="register.spec.ts" time="3.02">
+</testcase>
+<testcase name="@sanity Registration functional tests › should show error for missing telephone number" classname="register.spec.ts" time="5.734">
+</testcase>
+<testcase name="@sanity Registration functional tests › should show error for missing password" classname="register.spec.ts" time="7.666">
+</testcase>
+<testcase name="@sanity Registration functional tests › should show error for password mismatch" classname="register.spec.ts" time="6.773">
+</testcase>
+<testcase name="@sanity Registration functional tests › should show error when privacy policy is not accepted" classname="register.spec.ts" time="11.423">
+</testcase>
+<testcase name="@sanity Registration functional tests › should keep form field values after failed submission" classname="register.spec.ts" time="2.521">
+</testcase>
+<testcase name="@sanity Registration functional tests › should show error for invalid telephone format" classname="register.spec.ts" time="2.798">
+</testcase>
+</testsuite>
+<testsuite name="wishlist.spec.ts" timestamp="2026-05-20T08:52:04.722Z" hostname="chrome" tests="2" failures="0" skipped="0" time="4.133" errors="0">
+<testcase name="@sanity Wishlist functional tests › should display the wishlist heading" classname="wishlist.spec.ts" time="2.261">
+</testcase>
+<testcase name="@sanity Wishlist functional tests › should keep wishlist container visible" classname="wishlist.spec.ts" time="1.872">
 </testcase>
 </testsuite>
 </testsuites>
