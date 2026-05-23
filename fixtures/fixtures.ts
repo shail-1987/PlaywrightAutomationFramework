@@ -13,11 +13,15 @@ type MyFixtures = {
 
 export const test = base.extend<MyFixtures>({
   // Extend the default Playwright test with custom page objects.
-  homePage: async ({ page }, use) => {
+
+
+  homePage: async ({ page }, use) => {  
     await use(new HomePage(page));
   },
+  
 
   loginPage: async ({ page }, use) => {
+
     await use(new LoginPage(page));
   },
 

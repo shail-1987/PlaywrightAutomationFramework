@@ -1,15 +1,7 @@
+import {test, chromium} from "@playwright/test"
+import{HomePage} from  '../pages/home_page';
 
+const res=test.extend<string>( {
 
-//var👇
+})
 
-function demo() {
-    var name: string = "Atharv";
-    console.log("trying print");
-    console.log(name);
-    if (true) {
-        console.log(name);
-
-
-    }
-}
-demo();
