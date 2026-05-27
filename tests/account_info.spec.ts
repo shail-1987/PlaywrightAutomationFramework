@@ -44,4 +44,4 @@ test.describe('@sanity Account information functional tests', () => {
     await expect(editAccountPage.continueButton).toBeVisible();
   });
 });
-//Changes should trigger pipeline anothetthjgjhytuyg
+//Changes should trigger pipeline anothetthjgjhytuygvjhgh
