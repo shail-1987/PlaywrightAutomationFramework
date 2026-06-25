@@ -1,8 +1,6 @@
 {
-  "validEmail": "",
-  "validPassword": "",
-  "invalidEmail": "invalid.user@example.com",
-  "invalidPassword": "WrongPass123!",
-  "testEmail": "test.user@example.com",
-  "testPassword": "TestPassword123"
+  "validUser":{
+    "email":"prakashshailendra45@gmail.com",
+    "password":"Jaymanti@123"
+  }
 }

@@ -1,30 +1,38 @@
 import { BasePage } from './base_page';
-import type { Page } from '@playwright/test';
+import type { Page,Locator } from '@playwright/test';
 
 export class HomePage extends BasePage {
-  readonly searchInput;
-  readonly searchButton;
-  readonly accountMenu;
-  readonly loginLink;
-  readonly registerLink;
+ // used protected so that it can be used only inside page object classes to maintain encapsulation.. pom ka main goal hota hai test classes directly
+ //page clasees use na kare 
+  protected readonly searchInput:Locator;
+  protected readonly searchButton:Locator;
+  protected readonly accountMenu:Locator;
+  protected readonly loginLink:Locator;
+  protected readonly registerLink:Locator;
 
   constructor(page: Page) {
     super(page);
-    this.searchInput = page.locator('input[name="search"]');
-    this.searchButton = page.locator('button[type="button"][class*=\"btn-default\"]');
-    this.accountMenu = page.locator('a[title="My Account"]');
-    this.loginLink = page.locator('text=Login');
-    this.registerLink = page.locator('a[href*="route=account/register"]');
+    this.searchInput = this.page.locator('input[name="search"]');
+    this.searchButton = this.page.locator('button[type="button"][class*=\"btn-default\"]');
+    this.accountMenu = this.page.locator('a[title="My Account"]');
+    this.loginLink = this.page.locator('text=Login');
+    this.registerLink = this.page.locator('a[href*="route=account/register"]');
+   // this.iphoneLink=this.page.getByRole('link',{name:'iPhone'});
+   // this.iPhoneImage=this.page.getByRole('img',{name:'iPhone'});
   }
 
-  async navigate(): Promise<void> {
-    // Navigate to the configured app URL.
-    await this.goto('');
+  async navigateToHomePage(): Promise<void> {
+    await this.goto('');//BasePage wali goto() method ko call karo
   }
 
-  async searchProduct(term: string): Promise<void> {
-    await this.searchInput.fill(term);
+  async searchProduct(item: string): Promise<void> {
+    await this.searchInput.fill(item);
     await this.searchButton.click();
+  }
+  
+  
+  getSearchResults():Locator{
+    return this.page.locator('.product-thumb h4 a')
   }
 
   async openLogin(): Promise<void> {
@@ -34,16 +42,10 @@ export class HomePage extends BasePage {
   }
 
   async openRegister(): Promise<void> {
-    // Navigate directly to the register page for reliability in CI.
-    const baseURL = process.env.URL || '';
-    await this.page.goto(new URL('index.php?route=account/register', baseURL).toString(), { waitUntil: 'load' });
-    await this.page.waitForLoadState('networkidle');
-    await this.page.locator('#input-firstname').waitFor({ state: 'attached', timeout: 30000 });
+    await this.goto('/index.php?route=account/register');
   }
 
   async logout(): Promise<void> {
-    // Navigate to the logout page to ensure the user is logged out.
-    const baseURL = process.env.URL || '';
-    await this.page.goto(new URL('index.php?route=account/logout', baseURL).toString());
+    await this.goto('/index.php?route=account/logout');
   }
 }

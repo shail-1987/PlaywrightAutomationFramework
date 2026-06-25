@@ -1,27 +1,26 @@
-import { expect, type Page } from '@playwright/test';
+import { type Page,Locator } from '@playwright/test';
 import { BasePage } from './base_page';
 
 export class LoginPage extends BasePage {
-  readonly emailInput;
-  readonly passwordInput;
-  readonly loginButton;
-  readonly returningCustomerHeading;
+  readonly emailInput:Locator;
+  readonly password:Locator;
+  readonly loginBut:Locator;
+  
 
   constructor(page: Page) {
     super(page);
-    this.emailInput = page.locator('#input-email');
-    this.passwordInput = page.locator('#input-password');
-    this.loginButton = page.locator('input[type="submit"][value="Login"]');
-    this.returningCustomerHeading = page.locator('h2', { hasText: 'Returning Customer' });
+    this.emailInput = this.page.locator('#input-email');
+    this.password = this.page.locator('#input-password');
+    this.loginBut=this.page.locator("[type='submit']")
+   
   }
 
   async login(email: string, password: string): Promise<void> {
     await this.emailInput.fill(email);
-    await this.passwordInput.fill(password);
-    await this.loginButton.click();
+    await this.password.fill(password);
+    await this.loginBut.click();
+   
   }
 
-  async expectLoginPage(): Promise<void> {
-    await expect(this.returningCustomerHeading).toBeVisible();
-  }
+  
 }

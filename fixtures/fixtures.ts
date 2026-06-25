@@ -1,44 +1,66 @@
 import { test as base, Page } from '@playwright/test';
 import { HomePage } from '../pages/home_page';
 import { LoginPage } from '../pages/login_page';
-import { RegisterPage } from '../pages/register_page';
-//👇here fixtures(homePage,loginPage..etc) are assigned to a type object MyFixtures thats why we used = here
-//note: this is a type assignment process not value assignment
+import {AccountPage} from '../pages/AccountPage'
+
+
 type MyFixtures = {
   homePage: HomePage;
   loginPage: LoginPage;
+  accountPage:AccountPage;
   loggedInPage: Page;
-  registerPage: RegisterPage;
+  
 };
-
 export const test = base.extend<MyFixtures>({
   // Extend the default Playwright test with custom page objects.
-
-
   homePage: async ({ page }, use) => {  
     await use(new HomePage(page));
   },
-  
-
   loginPage: async ({ page }, use) => {
 
     await use(new LoginPage(page));
   },
+  accountPage: async ({ page }, use) => {
 
-  registerPage: async ({ page }, use) => {
-    await use(new RegisterPage(page));
+    await use(new AccountPage(page));
   },
+  
 
-  // Authenticated fixture: use storageState only for tests that need a signed-in user.
-  loggedInPage: async ({ browser }, use) => {
-    const context = await browser.newContext({ storageState: 'storageState.json' });
-    /*☝️Context: when we launch chrome then there is possibility that we can open normaal profile, guest profile or incognito so these
-      seprate session/profile is called context.
-    simple terms👉 Browser Context= seprate browser session{it contains cookies,login session,local storage,cache}
-    */
+loggedInPage: async ({ browser }, use) => {
+  const context = await browser.newContext({ storageState:'storageState.json'});
+  const page = await context.newPage();
+  await page.goto('index.php?route=account/account');
+  await use(page);
+  await context.close();
+},
+
+//for multiple users👇👇
+
+/*
+loggedInPage: async ({ browser }, use, testInfo) => {
+    const workerIndex = testInfo.workerIndex;
+
+    const storageFiles = [
+        '.auth/user1.json',
+        '.auth/user2.json',
+        '.auth/user3.json',
+    ];
+
+    const assignedUser =
+        storageFiles[workerIndex % storageFiles.length];
+
+    const context = await browser.newContext({
+        storageState: assignedUser,
+    });
+
     const page = await context.newPage();
+
     await page.goto('index.php?route=account/account');
+
     await use(page);
+
     await context.close();
-  },
+},
+*/
+ 
 });

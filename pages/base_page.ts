@@ -1,6 +1,4 @@
-//this is base class made by me 
-//shail_tr
-import type { Page } from '@playwright/test';
+import type {  Page } from '@playwright/test';
 
 export class BasePage {
   readonly page: Page;
@@ -15,4 +13,3 @@ async goto(path = ''): Promise<void> {
   }
 
 }
-//showing auto trigger_by shaiul

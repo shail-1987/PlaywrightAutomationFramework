@@ -1,6 +1,36 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="2.673509">
-<testsuite name="practiceAnything.spec.ts" timestamp="2026-05-21T11:27:10.942Z" hostname="chrome" tests="1" failures="0" skipped="0" time="0.154" errors="0">
-<testcase name="getting custom page" classname="practiceAnything.spec.ts" time="0.154">
+<testsuites id="" name="" tests="6" failures="0" skipped="0" errors="0" time="10.602563">
+<testsuite name="accountPage.spec.ts" timestamp="2026-06-25T18:30:19.437Z" hostname="chrome" tests="1" failures="0" skipped="0" time="4.192" errors="0">
+<testcase name="should login successfully and open account page" classname="accountPage.spec.ts" time="4.192">
+</testcase>
+</testsuite>
+<testsuite name="homePage.spec.ts" timestamp="2026-06-25T18:30:19.437Z" hostname="chrome" tests="4" failures="0" skipped="0" time="8.621" errors="0">
+<testcase name="@ smoke Testing elements of homePage" classname="homePage.spec.ts" time="2.131">
+</testcase>
+<testcase name="@sanity Search iPhone" classname="homePage.spec.ts" time="2.717">
+<system-out>
+<![CDATA[[ [32m'iPhone'[39m ]
+]]>
+</system-out>
+</testcase>
+<testcase name="@sanity Search Mac" classname="homePage.spec.ts" time="2.044">
+<system-out>
+<![CDATA[[ [32m'iMac'[39m, [32m'MacBook'[39m, [32m'MacBook Air'[39m, [32m'MacBook Pro'[39m ]
+]]>
+</system-out>
+</testcase>
+<testcase name="@sanity Search Samsung" classname="homePage.spec.ts" time="1.729">
+<system-out>
+<![CDATA[[ [32m'Samsung SyncMaster 941BW'[39m, [32m'Samsung Galaxy Tab 10.1'[39m ]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="login_page.spec.ts" timestamp="2026-06-25T18:30:19.437Z" hostname="chrome" tests="1" failures="0" skipped="0" time="3.152" errors="0">
+<testcase name="should open the login page from the home page" classname="login_page.spec.ts" time="3.152">
+<system-out>
+<![CDATA[===========welcome to account page=============
+]]>
+</system-out>
 </testcase>
 </testsuite>
 </testsuites>
