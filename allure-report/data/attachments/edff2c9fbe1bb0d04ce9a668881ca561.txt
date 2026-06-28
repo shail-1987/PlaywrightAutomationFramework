@@ -1,0 +1,1 @@
+[ 'Samsung SyncMaster 941BW', 'Samsung Galaxy Tab 10.1' ]

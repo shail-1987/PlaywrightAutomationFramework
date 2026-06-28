@@ -1,7 +1,7 @@
-import { test as base, Page } from '@playwright/test';
-import { HomePage } from '../pages/home_page';
-import { LoginPage } from '../pages/login_page';
-import {AccountPage} from '../pages/AccountPage'
+import { test as base, Page } from '@playwright/test'
+import { HomePage } from '../pages/home_page'
+import { LoginPage } from '../pages/login_page'
+import {AccountPage} from '../pages/accountPage'
 
 
 type MyFixtures = {
