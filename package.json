@@ -18,9 +18,6 @@
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "@types/node": "^20.14.2",
-    "allure": "^3.13.2",
-    "allure-playwright": "^3.10.2",
-    "playwright": "^1.59.1",
     "ts-node": "^10.9.1",
     "tsx": "^4.22.4",
     "typescript": "^5.5.4"
@@ -29,7 +26,6 @@
     "@faker-js/faker": "^8.4.1",
     "@types/dotenv": "^6.1.1",
     "dotenv": "^17.4.2",
-    "openai": "^6.43.0",
-    "winston": "^3.19.0"
+    "openai": "^6.43.0"
   }
 }

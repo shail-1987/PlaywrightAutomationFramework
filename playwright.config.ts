@@ -41,8 +41,7 @@ export default defineConfig({
   reporter: [
   ['list'],
   ['html', { open: 'never' }],
-  ['junit', { outputFile: 'results.xml' }],
-  ['allure-playwright']
+  ['junit', { outputFile: 'results.xml' }]
 ],
   globalSetup: require.resolve('./global-setup'),// Test execution se pehle global-setup.ts file run karne ke liye
   use: {
