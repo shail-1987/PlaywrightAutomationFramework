@@ -1,6 +1,9 @@
-import { test} from '../fixtures/fixtures';
+import { test} from "../../fixtures/fixtures";
 import {expect} from '@playwright/test'
-import login_data from '../test_data/login_data.json'
+import login_data from '../../test_data/login_data.json'
+
+
+
 test('should open the login page from the home page', async ({ homePage,loginPage }) => {
   await homePage.navigateToHomePage();
   await expect(homePage.page).toHaveURL(/opencart\/$/);//$ ka matlab hai opencart par hi string khtm ho rahi hai

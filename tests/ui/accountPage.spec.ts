@@ -1,5 +1,5 @@
-import { test } from '../fixtures/fixtures';
-import loginData from '../test_data/login_data.json';
+import { test } from '../../fixtures/fixtures';
+import loginData from '../../test_data/login_data.json';
 import {expect} from '@playwright/test'
 
 test('should login successfully and open account page',async ({ homePage, loginPage, accountPage }) => {

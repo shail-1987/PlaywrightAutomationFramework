@@ -1,4 +1,4 @@
-import { test } from '../fixtures/fixtures'
+import { test } from '../../fixtures/fixtures'
 import { expect } from '@playwright/test'
 test("@ smoke Testing elements of homePage", async ({ homePage }) => {
     await homePage.navigateToHomePage();

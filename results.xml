@@ -1,34 +1,65 @@
-<testsuites id="" name="" tests="6" failures="0" skipped="0" errors="0" time="10.602563">
-<testsuite name="accountPage.spec.ts" timestamp="2026-06-25T18:30:19.437Z" hostname="chrome" tests="1" failures="0" skipped="0" time="4.192" errors="0">
-<testcase name="should login successfully and open account page" classname="accountPage.spec.ts" time="4.192">
-</testcase>
-</testsuite>
-<testsuite name="homePage.spec.ts" timestamp="2026-06-25T18:30:19.437Z" hostname="chrome" tests="4" failures="0" skipped="0" time="8.621" errors="0">
-<testcase name="@ smoke Testing elements of homePage" classname="homePage.spec.ts" time="2.131">
-</testcase>
-<testcase name="@sanity Search iPhone" classname="homePage.spec.ts" time="2.717">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="1.7320980000048876">
+<testsuite name="api\user.spec.ts" timestamp="2026-08-10T16:48:19.626Z" hostname="chrome" tests="1" failures="0" skipped="0" time="0.158" errors="0">
+<testcase name="User API Test Suite › Get Users API" classname="api\user.spec.ts" time="0.158">
 <system-out>
-<![CDATA[[ [32m'iPhone'[39m ]
-]]>
-</system-out>
-</testcase>
-<testcase name="@sanity Search Mac" classname="homePage.spec.ts" time="2.044">
-<system-out>
-<![CDATA[[ [32m'iMac'[39m, [32m'MacBook'[39m, [32m'MacBook Air'[39m, [32m'MacBook Pro'[39m ]
-]]>
-</system-out>
-</testcase>
-<testcase name="@sanity Search Samsung" classname="homePage.spec.ts" time="1.729">
-<system-out>
-<![CDATA[[ [32m'Samsung SyncMaster 941BW'[39m, [32m'Samsung Galaxy Tab 10.1'[39m ]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="login_page.spec.ts" timestamp="2026-06-25T18:30:19.437Z" hostname="chrome" tests="1" failures="0" skipped="0" time="3.152" errors="0">
-<testcase name="should open the login page from the home page" classname="login_page.spec.ts" time="3.152">
-<system-out>
-<![CDATA[===========welcome to account page=============
+<![CDATA[[
+  { id: [33m2[39m, name: [32m'atharv'[39m, job: [32m'qa'[39m },
+  { id: [33m3[39m, name: [32m'atharv'[39m, job: [32m'qa'[39m },
+  { id: [33m13[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m14[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m15[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m16[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m17[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m18[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m19[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m20[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m21[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m22[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m23[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m24[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m25[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m26[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m27[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m28[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m29[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m30[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m31[39m, name: [32m'Lovely'[39m, job: [32m'RemoteJob'[39m },
+  { id: [33m32[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m33[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m34[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m35[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m36[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m37[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m38[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m39[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m40[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m41[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m42[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m43[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m44[39m, name: [32m'Shailendra'[39m, job: [32m'QA Engineer'[39m },
+  { id: [33m45[39m, name: [32m'Atharv'[39m, job: [32m'Tester'[39m },
+  { id: [33m46[39m, name: [32m'Preethi'[39m, job: [32m'SDET'[39m },
+  { id: [33m47[39m, name: [32m'Lovely'[39m, job: [32m'RemoteJob'[39m },
+  { id: [33m49[39m, name: [32m'roushan'[39m, job: [32m'engineer'[39m },
+  { id: [33m50[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m51[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m52[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m54[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m55[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m56[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m57[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m58[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m59[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m60[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m61[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m62[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m63[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m64[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m65[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m66[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m67[39m, name: [32m'Santosh'[39m, job: [1mnull[22m },
+  { id: [33m68[39m, name: [32m'Santosh'[39m, job: [1mnull[22m }
+]
 ]]>
 </system-out>
 </testcase>
